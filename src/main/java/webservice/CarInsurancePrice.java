@@ -27,14 +27,12 @@ public class CarInsurancePrice {
 
     private static final int JEUNE_AGE = 25;
     private static final double JEUNE_TAUX = 1.5;
-    private static final double PRIX_BASE = 20;
+    private static final double PRIX_BASE = 60;
     private static final String CARBURANT_ESSENCE = "essence";
     private static final String CARBURANT_DIESEL = "diesel";
     private static final int CARBURANT_DIESEL_PRIX = 5;
     private static final int CARBURANT_ESSENCE_PRIX = 10;
-    private static final int CHEVAUX_NB_MAX = 500;
     private static final int CHEVAUX_NB_MINI = 101;
-    private static final int CHEVAUX_TAUX_MAX = 5;
     private static final double CHEVAUX_TAUX_MINI = 1.1;
     private static final double ANNEE_TAUX_NEW = 1.2;
     private static final double ANNEE_TAUX_MINI = 1.5;
@@ -90,8 +88,6 @@ public class CarInsurancePrice {
         int nbChevaux = Integer.parseInt(chevaux);
         if (nbChevaux < CHEVAUX_NB_MINI) {
             price *= CHEVAUX_TAUX_MINI;
-        } else if (nbChevaux > CHEVAUX_NB_MAX) {
-            price *= CHEVAUX_TAUX_MAX;
         } else {
             price *= (nbChevaux / 100);
         }
